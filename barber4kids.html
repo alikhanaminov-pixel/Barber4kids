@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barber4kids — детский барбершоп в Астане</title>
+<meta name="description" content="Детский барбершоп в Астане. Первая стрижка без слёз. Запись в WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e8;--surface:#fffdf8;--ink:#17201c;--muted:#5d665f;--accent:#a8803a;--on-accent:#1a1405;--line:#e3dac8;--hd:rgba(246,241,232,.88);
+--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1512;--surface:#161e1a;--ink:#f2ece0;--muted:#a2aaa3;--accent:#d4ac5e;--line:#26312b;--hd:rgba(15,21,18,.88)}}
+:root[data-theme="dark"]{--bg:#0f1512;--surface:#161e1a;--ink:#f2ece0;--muted:#a2aaa3;--accent:#d4ac5e;--line:#26312b;--hd:rgba(15,21,18,.88)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:10}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--hd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:600 22px var(--serif);letter-spacing:.04em}
+.logo b{color:var(--accent);font-weight:600}
+.nav nav{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--on-accent);font:600 15px var(--sans);padding:14px 26px;border-radius:999px;border:0;transition:transform .2s,opacity .2s}
+.btn:hover{transform:translateY(-2px);opacity:.92}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.sm{padding:9px 18px;font-size:14px}
+.hero{padding:88px 0 72px;text-align:center}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font:500 clamp(42px,8vw,84px)/1.02 var(--serif);margin:18px auto 22px;max-width:14ch;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent)}
+.lead{max-width:520px;margin:0 auto 34px;color:var(--muted);font-size:18px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.proof{display:flex;justify-content:center;gap:clamp(20px,6vw,64px);margin-top:64px;padding-top:34px;border-top:1px solid var(--line);flex-wrap:wrap}
+.proof div{text-align:center}
+.proof strong{display:block;font:500 40px/1 var(--serif);color:var(--accent)}
+.proof span{font-size:13px;color:var(--muted)}
+section{padding:80px 0}
+h2{font:500 clamp(32px,5vw,50px)/1.1 var(--serif);margin:10px 0 40px;letter-spacing:-.005em}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px 26px}
+.card i{font:italic 500 30px var(--serif);color:var(--accent);display:block;margin-bottom:14px}
+.card h3{margin:0 0 8px;font:600 17px var(--sans)}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.list{border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:24px 0;border-bottom:1px solid var(--line)}
+.row h3{margin:0;font:500 26px var(--serif)}
+.row p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.row span{font-size:13px;color:var(--accent);white-space:nowrap}
+.quote{font:italic 500 22px/1.4 var(--serif);margin:0 0 18px}
+.who{font-size:13px;color:var(--muted)}
+.stars{color:var(--accent);letter-spacing:3px;margin-bottom:12px;font-size:14px}
+.band{background:var(--ink);color:var(--bg);border-radius:28px;padding:56px 28px;text-align:center}
+.band h2{margin:8px auto 14px;max-width:16ch}
+.band p{color:inherit;opacity:.7;max-width:440px;margin:0 auto 28px}
+.contacts{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:8px}
+.contacts .card a{color:var(--accent);font-weight:500}
+footer{padding:34px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:720px){.nav nav{display:none}.hero{padding-top:56px}section{padding:56px 0}.row{flex-direction:column;gap:6px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#top">Barber<b>4</b>kids</a>
+<nav><a href="#why">Почему мы</a><a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+<a class="btn sm" href="https://wa.me/77084255161">Записаться</a>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+<div class="eyebrow">Детский барбершоп · Астана</div>
+<h1>Первая стрижка <em>без слёз</em></h1>
+<p class="lead">Мастера, которые находят общий язык даже с самыми непоседливыми клиентами. Быстро, аккуратно, спокойно для ребёнка и родителей.</p>
+<div class="cta">
+<a class="btn" href="https://wa.me/77084255161">Записаться в WhatsApp</a>
+<a class="btn ghost" href="tel:+77084255161">+7 708 425 51 61</a>
+</div>
+<div class="proof">
+<div><strong>5,0</strong><span>рейтинг на Яндекс Картах</span></div>
+<div><strong>17</strong><span>оценок от родителей</span></div>
+<div><strong>1</strong><span>визит, чтобы ребёнок полюбил стрижку</span></div>
+</div>
+</div>
+
+<section id="why"><div class="wrap">
+<div class="eyebrow">Почему мы</div>
+<h2>Стрижка, которую дети<br>просят повторить</h2>
+<div class="grid">
+<div class="card"><i>01</i><h3>Подход к каждому ребёнку</h3><p>Мастера быстро находят контакт, в том числе с теми, кто раньше отказывался стричься.</p></div>
+<div class="card"><i>02</i><h3>Скорость без суеты</h3><p>Родители отмечают, что ребёнка стригут быстро и без слёз.</p></div>
+<div class="card"><i>03</i><h3>Профессиональные мастера</h3><p>Аккуратный результат и внимание к деталям, как в барбершопе для взрослых.</p></div>
+<div class="card"><i>04</i><h3>Удобное расположение</h3><p>Астана, ул. Әлихан Бөкейхан, 27/2. Рядом остановка и школы района.</p></div>
+</div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<div class="eyebrow">Услуги</div>
+<h2>Всё, что нужно<br>юному джентльмену</h2>
+<div class="list">
+<div class="row"><div><h3>Детская стрижка</h3><p>Аккуратная классическая или модельная стрижка под ваш запрос.</p></div><span>Цена по запросу</span></div>
+<div class="row"><div><h3>Первая стрижка</h3><p>Мягкое знакомство с барбершопом, без стресса для малыша.</p></div><span>Цена по запросу</span></div>
+<div class="row"><div><h3>Стрижка для подростков</h3><p>Современные формы, чёткие линии, уход за стилем.</p></div><span>Цена по запросу</span></div>
+</div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+<div class="eyebrow">Отзывы</div>
+<h2>Родители говорят сами</h2>
+<div class="grid">
+<div class="card"><div class="stars">★★★★★</div><p class="quote">«Все мастера профессионалы. С прошлого года ходим только сюда. Раньше сын отказывался стричься».</p><div class="who">Алия А., Яндекс Карты</div></div>
+<div class="card"><div class="stars">★★★★★</div><p class="quote">«Мастер Гульнара топ. Быстро находит общий язык, справилась даже с плачущим непоседой».</p><div class="who">Assiya Z., Яндекс Карты</div></div>
+<div class="card"><div class="stars">★★★★★</div><p class="quote">«Стригут быстро и без слёз. Всё чётко и аккуратно».</p><div class="who">Zaira K., Яндекс Карты</div></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="band">
+<div class="eyebrow">Запись</div>
+<h2>Запишите ребёнка на удобное время</h2>
+<p>Напишите нам в WhatsApp, подберём время и мастера.</p>
+<a class="btn" href="https://wa.me/77084255161">Записаться в WhatsApp</a>
+</div></div></section>
+
+<section id="contacts"><div class="wrap">
+<div class="eyebrow">Контакты</div>
+<h2>Как нас найти</h2>
+<div class="contacts">
+<div class="card"><h3>Адрес</h3><p>Астана, ул. Әлихан Бөкейхан, 27/2, НП 1а</p><p style="margin-top:14px"><a href="https://yandex.kz/maps/org/barber4kids/149057017316/">Построить маршрут →</a></p></div>
+<div class="card"><h3>Телефон и WhatsApp</h3><p><a href="tel:+77084255161">+7 708 425 51 61</a></p><p style="margin-top:14px"><a href="https://wa.me/77084255161">Написать в WhatsApp →</a></p></div>
+<div class="card"><h3>Instagram</h3><p>Работы мастеров и новости</p><p style="margin-top:14px"><a href="https://instagram.com/barberkidskz">@barberkidskz →</a></p></div>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot"><span>© Barber4kids, Астана</span><a href="https://yandex.kz/maps/org/barber4kids/149057017316/reviews/">Все отзывы на Яндекс Картах</a></div></footer>
+</body>
+</html>
